@@ -8,7 +8,6 @@ RUN apt-get update && apt-get -y install \
   libmysqld-dev \
   libpq-dev \
   libsqlite3-dev \
-  nodejs \
   rbenv \
   ruby-build \
   ruby-dev \
