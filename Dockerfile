@@ -21,6 +21,9 @@ RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-buil
   && rbenv install ${RUBY_VERSION} \
   && rbenv global ${RUBY_VERSION}
 
+ARG RUBYGEMS_VERSION=3.0.2
+RUN gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/ && rbenv rehash
+
 ARG BUNDLER_VERSION=1.17.1
 RUN gem install bundler -v ${BUNDLER_VERSION} && rbenv rehash
 
